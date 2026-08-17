@@ -1,0 +1,4 @@
+date,description,amount,currency,reference
+2026-08-14,Customer payment,120.00,TTD,INV-DEMO-001
+2026-08-14,Customer payment,85.00,TTD,INV-DEMO-002
+2026-08-15,Bank fee,-3.00,TTD,
