@@ -3,7 +3,7 @@
 Proprietary production components are excluded from the public contest repository. This is not the production reconciliation engine. The repository contains the deployable contest interface, architecture documentation and permitted demonstration components.
 
 **Live interface (the deployable contest demo):**  
-https://tidelinx.com/ · https://tidelinx.com/floor · https://tidelinx.com/login
+https://tidelinx.com/ · https://tidelinx.com/floor · https://tidelinx.com/login · https://tidelinx.com/judges · https://tidelinx.com/proof-of-concept
 
 TideLinx verifies externally executed payments. The merchant’s bank holds the funds. TideLinx is matching software, not a custodian, not a bank login, and not a wallet.
 
@@ -18,9 +18,11 @@ TideLinx verifies externally executed payments. The merchant’s bank holds the 
 | `examples/` | Generic CSV. No real accounts. |
 | `demo/` | Pointer to the live demo. No parser source. |
 | `public-api/` | Public routes only. No secrets. |
+| `PROOF_OF_CONCEPT.md` | Redacted evidence chain and POC-01..08 test matrix. |
+| `LOGBOOK.md` | Build log and decisions for judges. |
 
 ## What is not in this tree
-Production matching, bank-statement maps, scoring, prompts, connectors, vault, `.env`, and security internals. Those remain trade secrets. Patent pending (provisional filed). Do not say patented.
+Production matching, bank-statement maps, scoring, prompts, connectors, vault, `.env`, and security internals. Those remain trade secrets. Patent pending. U.S. provisional patent application no. 64/134,982 has been filed for this technology. Do not say patented.
 
 The private repo `https://github.com/RAYKUNJAL/tidelinx` is **not** this repository.
 
