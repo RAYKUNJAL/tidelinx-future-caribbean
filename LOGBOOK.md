@@ -25,17 +25,17 @@ TideLinx is matching software. A customer writes a payment reference on their ba
 1. Validation is deterministic, not AI. The AI agent helps read and explain statements and flags uncertain matches, but only the exact-match rules can authorize a payment. This is what makes the system trustworthy enough for money.
 2. No bank login, ever. The system only ever receives CSV exports. Bank credentials, OTPs and sessions must never be exposed.
 3. Adapter pattern. Every bank can differ, so each bank gets a small adapter that converts its format into the common schema. The reconciliation engine never contains bank-specific logic.
-4. Real evidence over simulation. The first proof uses a real 0.17 USD payment into a real Mercury account, exported as a real CSV. Simulated transactions are never presented as real proof.
+4. Real evidence over simulation. The first proof uses a real 10.17 USD payment into a real Mercury account, exported as the real bank CSV. Simulated transactions are never presented as real proof.
 
 ## Testing
 
 - Automated unit and integration tests: 83 tests across 17 test files, all passing. They cover the Mercury adapter (detection, parsing, normalization, amount/date handling), the pipeline, reconciliation, authorization idempotency, webhook signing, replay protection and tenant isolation.
 - Live failure battery on production: wrong amount, unknown reference, duplicate transaction, duplicate file, invalid CSV, changed headers and ambiguous transactions — every case produced the safe outcome (no automatic authorization).
-- Full loop test: receivable created, real payment matched, payment verified, authorization event emitted, connected order released.
+- Full loop test: receivable created, real payment matched, payment verified, authorization event emitted, connected order released — completed with the real settled transfer on 31 Aug 2026 (ORDER-POC-001 LOCKED → RELEASED).
 
 ## Evidence
 
-See PROOF_OF_CONCEPT.md in this repository. The redacted evidence chain (source file SHA-256, authorization ID, correlation ID, webhook event ID) is recorded from the live system. Public proof status remains PENDING until the real settled transfer is recorded and the Review step signs it.
+See PROOF_OF_CONCEPT.md in this repository. The redacted evidence chain (source file SHA-256, authorization ID, correlation ID, webhook event ID) is recorded from the live system. The real settled transfer (10.17 USD, settled 28 Aug 2026) was recorded and verified on 31 Aug 2026. Public proof status remains PENDING until the Review step signs the frozen record.
 
 ## Patent
 
@@ -43,13 +43,14 @@ Patent pending. U.S. provisional patent application no. 64/134,982 has been file
 
 ## What is next
 
-- Record the real settled Mercury transfer (expected 28–31 Aug 2026) and sign the review so public proof moves to PASS.
+- Complete the Review sign-off on the frozen record so public proof moves to PASS.
 - Add Republic Bank, First Citizens, RBC and Scotiabank CSV adapters (layout work is partially mapped).
 - Publish the connected-app API contract for third parties who want to link their websites to TideLinx.
-- Capture the Loom demo video (max 5 minutes) for the submission.
+- Record the Loom demo video (90 seconds – 3 minutes maximum, per contest rules) for the submission.
 
 ## Log entries
 
 - 2026-08-17: Contest-safe public repository published at github.com/RAYKUNJAL/tidelinx-future-caribbean.
 - 2026-08-24: Master build specification written (real-bank POC and CSV ingestion spec).
-- 2026-08-26: Full test suite run and green (83 tests). POC-01..08 validated live against production. Evidence package regenerated from the frozen record. Real 0.17 Mercury transfer initiated (arrives 28–31 Aug).
+- 2026-08-26: Full test suite run and green (83 tests). POC-01..08 validated live against production. Evidence package regenerated from the frozen record. Real 10.17 USD Mercury transfer initiated (arrives 28–31 Aug).
+- 2026-08-31: Real settled Mercury transfer recorded and verified end to end. The 10.17 USD payment (settled 28 Aug) was exported from Mercury as the real CSV, uploaded to TideLinx, matched by exact reference + amount + currency, and ORDER-POC-001 moved from LOCKED to RELEASED via the signed webhook. Evidence package regenerated from the frozen record (new file SHA-256, authorization and correlation IDs).

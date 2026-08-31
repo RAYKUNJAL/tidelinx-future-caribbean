@@ -5,6 +5,8 @@ Proprietary production components are excluded from the public contest repositor
 **Live interface (the deployable contest demo):**  
 https://tidelinx.com/ · https://tidelinx.com/floor · https://tidelinx.com/login · https://tidelinx.com/judges · https://tidelinx.com/proof-of-concept
 
+**Proof status:** A real settled Mercury payment (10.17 USD, settled 28 Aug 2026) was ingested, matched and verified in the live system on 31 Aug 2026 — the connected order ORDER-POC-001 was released end to end. See PROOF_OF_CONCEPT.md for the redacted evidence chain.
+
 TideLinx verifies externally executed payments. The merchant’s bank holds the funds. TideLinx is matching software, not a custodian, not a bank login, and not a wallet.
 
 ## What is in this tree

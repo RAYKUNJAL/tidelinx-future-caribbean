@@ -2,7 +2,7 @@
 
 ## Status
 
-The TideLinx reconciliation software path has been validated against the live system. The real settled Mercury payment is in transit (expected 28–31 Aug 2026). Public proof status moves from PENDING to PASS only after the Review step signs the frozen evidence record — the system never marks its own proof complete.
+The TideLinx reconciliation software path has been validated against the live system. A real payment of 10.17 USD was initiated on 26 Aug 2026 from a Square Savings account into the Mercury Checking account, settled on 28 Aug 2026, and was ingested, matched and verified in the live system on 31 Aug 2026 — the connected order ORDER-POC-001 moved from LOCKED to RELEASED end to end. Public proof status moves from PENDING to PASS only after the Review step signs the frozen evidence record — the system never marks its own proof complete.
 
 ## What TideLinx does, in one paragraph
 
@@ -25,7 +25,7 @@ The whole chain is linked by one correlation ID, and every step is written to an
 
 | Test | What we did | Result (correct behaviour) |
 |---|---|---|
-| POC-01 Valid payment | Matched a correct reference + amount + currency | PASS — payment verified, order authorized |
+| POC-01 Valid payment | Matched a correct reference + amount + currency | PASS — payment verified, connected order released (ORDER-POC-001 LOCKED → RELEASED) |
 | POC-02 Wrong amount | Correct reference, wrong amount | PASS — no automatic authorization (review required) |
 | POC-03 Unknown reference | Correct amount, unknown reference | PASS — unmatched, no automatic authorization |
 | POC-04 Duplicate transaction | Imported the same payment twice | PASS — duplicate detected, no second authorization |
@@ -45,11 +45,12 @@ Every failure case above produced the safe outcome: no money-side action without
 | Method | Institution-originated CSV transaction export |
 | Expected amount | 10.17 USD |
 | Payment reference | TLX-POC-MERCURY-001 |
-| Source file SHA-256 | b76286245a7def82addb772082c15e9c717f9077a6262269f968d604a2d61307 |
+| Source file SHA-256 | 3dd4240e4dcd83701ad0c0072a3ee7186ab74d70fe59a01838640ce5ec1ef277 |
 | Receivable ID | a96c7d15-2f3b-4d40-9588-5399019c92af |
-| Authorization ID | auth_4d17ee935826321d |
-| Correlation ID | poc_corr_20260826_082A56 |
-| Webhook event ID | evt_7e8a0cd9-1b8c-46cb-a078-07e89a9cec8b |
+| Authorization ID | auth_23a70b15caae3911 |
+| Correlation ID | poc_corr_20260831_B061F8 |
+| Webhook event ID | evt_f035303f-0c60-4701-96f7-939e35984112 |
+| Connected order | ORDER-POC-001 (LOCKED → RELEASED) |
 
 Account numbers, bank credentials and personal data are never stored in this repository.
 
@@ -64,7 +65,7 @@ Account numbers, bank credentials and personal data are never stored in this rep
 
 - It does not claim a partnership or integration with Mercury. Evidence is validated using Mercury-originated transaction data.
 - It does not hold or move customer money.
-- Public proof status stays PENDING until the real settled transfer is recorded and Review signs it.
+- Public proof status stays PENDING until Review signs the frozen record. The real settled transfer was recorded and verified on 31 Aug 2026; Review sign-off is the remaining step.
 
 ## Patent
 
