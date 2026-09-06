@@ -1,0 +1,11 @@
+TideLinx — contest demo video
+
+File: 05-demo.mp4 (contest Data Room / Drive)
+Duration: 4 minutes 40 seconds
+Drive (Anyone with link, Viewer):
+https://drive.google.com/file/d/1JXFkePzkwtrutRuJE85s8ysQF4gWFr9b/view?usp=sharing
+Folder: https://drive.google.com/drive/folders/1KVUcUquJcdtiae-uYuHR1nMzXO0m5LIE
+Path shown in video: https://tidelinx.com/judges then https://tidelinx.com/floor
+
+The 6:07 explainer at https://tidelinx.com/nlm/explainer.mp4 is a site video, not the contest file.
+Do not commit the 166MB mp4 into this git repo — use the Drive link above.

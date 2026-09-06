@@ -1,0 +1,19 @@
+TideLinx — live demo links
+
+Primary
+  https://tidelinx.com/
+  https://tidelinx.com/judges
+  https://tidelinx.com/floor
+
+Operator login (statement-first console; no bank-portal automation)
+  https://tidelinx.com/login
+
+Health
+  GET https://tidelinx.com/api/health
+  → {"status":"healthy","service":"tidelinx-api","readOnlyBanking":true}
+
+Honest demo notes
+- TideLinx verifies externally executed payments. The merchant bank holds funds.
+- payment.matched webhook emit exists. Sister apps are not subscribed.
+- Conserve/FX on the floor is a sandbox ledger halt. TideLinx does not hold a USD pool.
+- Do not claim bank login. Do not claim a live unlock on Juvay or trade.juvay.app.
