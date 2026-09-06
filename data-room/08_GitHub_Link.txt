@@ -1,0 +1,10 @@
+TideLinx — GitHub (contest-safe, verified 6 September 2026)
+
+https://github.com/RAYKUNJAL/tidelinx-future-caribbean
+Visibility: PUBLIC. Branch: main.
+
+Documentation and permitted demo surface only. README states this is not the production reconciliation engine. No matching, connectors, scoring, prompts, or .env.
+
+DO NOT submit:
+https://github.com/RAYKUNJAL/tidelinx
+(private full backup; unauth 404)

@@ -7,18 +7,24 @@ https://tidelinx.com/ · https://tidelinx.com/floor · https://tidelinx.com/logi
 
 **Proof status:** A real settled Mercury payment (10.17 USD, settled 28 Aug 2026) was ingested, matched and verified in the live system on 31 Aug 2026 — the connected order ORDER-POC-001 was released end to end. See PROOF_OF_CONCEPT.md for the redacted evidence chain.
 
+**Contest demo video (4 minutes 40 seconds):**  
+https://drive.google.com/file/d/1JXFkePzkwtrutRuJE85s8ysQF4gWFr9b/view?usp=sharing  
+Folder: https://drive.google.com/drive/folders/1KVUcUquJcdtiae-uYuHR1nMzXO0m5LIE  
+Path shown: https://tidelinx.com/judges then https://tidelinx.com/floor. The ~6:07 site explainer at https://tidelinx.com/nlm/explainer.mp4 is not the contest file. The mp4 is not in this git repo.
+
 TideLinx verifies externally executed payments. The merchant’s bank holds the funds. TideLinx is matching software, not a custodian, not a bank login, and not a wallet.
 
 ## What is in this tree
 | Path | What it is |
 |---|---|
+| `data-room/` | Future Caribbean Data Room text pack (Sep 2026). Contest video is the Drive 4:40 file. |
 | `ARCHITECTURE.md` | High-level deploy shape. No recipe. |
 | `AGENT_WORKFLOW.md` | Inara, Mako, Deon, Una, Felix, Kai. |
 | `SETUP.md` | How to review the live demo. |
 | `RESPONSIBLE_AI.md` | Compliance statement. |
 | `LICENSE` | MIT, for this public tree only. |
 | `examples/` | Generic CSV. No real accounts. |
-| `demo/` | Pointer to the live demo. No parser source. |
+| `demo/` | Pointer to the live demo and the Drive 4:40 contest video. No parser source. |
 | `public-api/` | Public routes only. No secrets. |
 | `PROOF_OF_CONCEPT.md` | Redacted evidence chain and POC-01..08 test matrix. |
 | `LOGBOOK.md` | Build log and decisions for judges. |
